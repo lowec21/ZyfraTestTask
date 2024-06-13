@@ -1,0 +1,29 @@
+[
+{
+    "model": "quarryapp.dumptruck",
+    "pk": 1,
+    "fields": {
+        "board_number": "101",
+        "model": "БЕЛАЗ",
+        "max_load": 120
+    }
+},
+{
+    "model": "quarryapp.dumptruck",
+    "pk": 2,
+    "fields": {
+        "board_number": "102",
+        "model": "БЕЛАЗ",
+        "max_load": 120
+    }
+},
+{
+    "model": "quarryapp.dumptruck",
+    "pk": 3,
+    "fields": {
+        "board_number": "K103",
+        "model": "Komatsu",
+        "max_load": 110
+    }
+}
+]

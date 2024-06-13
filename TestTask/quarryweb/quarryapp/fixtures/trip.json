@@ -1,0 +1,32 @@
+[
+{
+    "model": "quarryapp.trip",
+    "pk": 1,
+    "fields": {
+        "current_load": 100,
+        "SiO2_procent": 32.0,
+        "Fe_procent": 67.0,
+        "current_truck": 1
+    }
+},
+{
+    "model": "quarryapp.trip",
+    "pk": 2,
+    "fields": {
+        "current_load": 125,
+        "SiO2_procent": 30.0,
+        "Fe_procent": 65.0,
+        "current_truck": 2
+    }
+},
+{
+    "model": "quarryapp.trip",
+    "pk": 3,
+    "fields": {
+        "current_load": 120,
+        "SiO2_procent": 35.0,
+        "Fe_procent": 62.0,
+        "current_truck": 3
+    }
+}
+]

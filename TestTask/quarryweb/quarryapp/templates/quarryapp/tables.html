@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Самосвалы</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        button {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Таблица текущих поездок</h2>
+    <form method="POST" action="{% url 'quarryapp:index' %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>Бортовой номер</th>
+            <th>Модель</th>
+            <th>Макс. грузоподъёмность, т</th>
+            <th>Текущий вес, т</th>
+            <th>Перегруз, %</th>
+            <th>Координаты разгрузки (x, y), %</th>
+        </tr>
+        {% for trip in table_trip_data %}
+            <tr>
+                <td>{{ trip.board_number }}</td>
+                <td>{{ trip.model }}</td>
+                <td>{{ trip.max_load }}</td>
+                <td>{{ trip.current_load }}</td>
+                <td>{{ trip.overload }}%</td>
+                <td><input type="text" name="{{ trip.id }}" placeholder="10 20"></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div style="text-align: center;">
+        <button type="submit">
+            Рассчитать
+        </button>
+    </div>
+
+    <h2>Таблица состояния склада</h2>
+    <table>
+        <tr>
+            <th>Название склада</th>
+            <th>Объём до разгрузки, т</th>
+            <th>Объём после разгрузки, т</th>
+            <th>Качественные характеристики после разгрузки</th>
+        </tr>
+        <tr>
+            <td>{{ table_storage_data.name }}</td>
+            <td>{{ table_storage_data.volume_before_unloading }}</td>
+            <td>{{ table_storage_data.volume_after_unloading }}</td>
+            <td>{{ table_storage_data.SiO2_procent }}% SiO2, {{ table_storage_data.Fe_procent }}% Fe</td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

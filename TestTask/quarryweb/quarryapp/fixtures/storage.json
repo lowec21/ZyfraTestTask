@@ -1,0 +1,13 @@
+[
+{
+    "model": "quarryapp.storage",
+    "pk": 1,
+    "fields": {
+        "name": "Склад",
+        "volume_before_unloading": 900,
+        "volume_after_unloading": 900,
+        "SiO2_procent": 34,
+        "Fe_procent": 65
+    }
+}
+]
